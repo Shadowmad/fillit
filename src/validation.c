@@ -22,7 +22,7 @@
 ** pereviryaemo vsi tetraminu
 */
 
-int		check_tetr(char *tetr)
+int					check_tetr(char *tetr)
 {
 	int		i;
 	int		count;
@@ -46,7 +46,7 @@ int		check_tetr(char *tetr)
 **checking for a valid 4'#' piece and it's connection(6 or 8 to be valid
 */
 
-static int	check_con(char *tetr)
+static int			check_con(char *tetr)
 {
 	int		i;
 	int		count;
@@ -71,7 +71,7 @@ static int	check_con(char *tetr)
 	return (count);
 }
 
-int		valid(char *tetr, int size)
+int				valid(char *tetr, int size)
 {
 	int i;
 
@@ -81,6 +81,8 @@ int		valid(char *tetr, int size)
 		if (check_tetr(tetr + 1) != 4)
 			return (0);
 		if (check_con(tetr + 1) != 6 && check_con(tetr + 1) != 8)
+			return (0);
+		if ((*(tetr + 20) != "\n") && (*(tetr + 20) != "#" || *(tetr + 20) != "."))
 			return (0);
 		i += 21;
 	}

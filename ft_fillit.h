@@ -7,6 +7,9 @@
 # include <stdlib.h>
 # include <stdio.h>
 
+int			check_tetr(char *tetr);
+static int	check_con(char *tetr);
+int			valid(char *tetr, int size);
 void		convert_tetr(char **tetr, char c);
 void		shift_tetr(char **tetr);
 char		***generate_tetr_list(t_list *start);
