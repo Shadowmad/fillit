@@ -1,4 +1,6 @@
-void		convert_tetr(char **tetr, char c)
+#include <unistd.h>
+
+void		print_tetr(char **tetr)
 {
 	int row_index;
 	int col_index;
@@ -10,10 +12,7 @@ void		convert_tetr(char **tetr, char c)
 		col_index = 0;
 		while (col_index < 5)
 		{
-			if (tetr[row_index][col_index] == '#')
-			{
-				tetr[row_index][col_index] = c;
-			}
+			write(1, &tetr[row_index][col_index], 1);
 			col_index++;
 		}
 		row_index++;
