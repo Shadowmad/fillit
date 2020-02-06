@@ -42,23 +42,23 @@ int			find_first_index(char **tetr, int mode)
 
 void		shift_tetr(char **tetr)
 {
-	int row_index;
-	int col_index;
+	int row;
+	int col;
 	int offset_x;
 	int offset_y;
 
-	row_index = -1;
+	row = -1;
 	offset_x = find_first_index(tetr, 0);
 	offset_y = find_first_index(tetr, 1);
-	while (++row_index < 4)
+	while (++row < 4)
 	{
-		col_index = -1;
-		while (++col_index < 4)
+		col = -1;
+		while (++col < 4)
 		{
-			if (tetr[row_index][col_index] != '.')
+			if (tetr[row][col] != '.')
 			{
-				tetr[row_index - offset_x][col_index - offset_y] = tetr[row_index][col_index];
-				tetr[row_index][col_index] = '.';
+				tetr[row - offset_x][col - offset_y] = tetr[row][col];
+				tetr[row][col] = '.';
 			}
 		}
 	}
