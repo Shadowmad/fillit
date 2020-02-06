@@ -71,7 +71,7 @@ static int			check_con(char *tetr)
 	return (count);
 }
 
-int				valid(char *tetr, int size)
+int				check_all_tetr(char *tetr, int size)
 {
 	int i;
 
