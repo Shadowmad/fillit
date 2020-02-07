@@ -10,12 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include "filit.h"
-#include <unistd.h>
-#include <fcntl.h>
-#include <sys/types.h>
-#include <sys/uio.h>
-
+#include "ft_fillit.h"
 /*
 ** checking for invalid characters
 ** returns 0 if any checks are failed
@@ -82,7 +77,7 @@ int				check_all_tetr(char *tetr, int size)
 			return (0);
 		if (check_con(tetr + 1) != 6 && check_con(tetr + 1) != 8)
 			return (0);
-		if ((*(tetr + 20) != "\n") && (*(tetr + 20) != "#" || *(tetr + 20) != "."))
+		if ((*(tetr + 20) != '\n') && (*(tetr + 20) != '#' || *(tetr + 20) != '.'))
 			return (0);
 		i += 21;
 	}

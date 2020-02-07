@@ -7,13 +7,10 @@
 # include <stdlib.h>
 # include <stdio.h>
 
-int			check_tetr(char *tetr);
-static int	check_con(char *tetr);
-int			check_all_tetr(char *tetr, int size);
-void		convert_tetr(char **tetr, char c);
-void		shift_tetr(char **tetr);
-char		***generate_tetr_list(t_list *start);
-void		free_linked_list(t_list *start);
-char		***convert_all(t_list *start);
-
+int         read_file(char *fname, char *input_buffer);
+int         check_tetr(char *tetr);
+static int  check_con(char *tetr);
+int         check_all_tetr(char *tetr, int size);
+void        convert_tetr(char **tetr, char c);
+void        shift_tetr(char **tetr);
 #endif

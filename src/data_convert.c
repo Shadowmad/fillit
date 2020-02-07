@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include "ft_fillit.h"
 
 void		convert_tetr(char **tetr, char c)
 {
