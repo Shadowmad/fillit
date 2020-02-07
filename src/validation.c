@@ -28,8 +28,8 @@ int					check_tetr(char *tetr)
 	{
 		if (tetr[i] && tetr[i] != '\n' && tetr[i] != '#' && tetr[i] != '.')
 			return (0);
-		if (tetr[i] != '\n' && !(((i + 1) % 5) == 0))
-			return (0);
+    if (tetr[i] == '\n' && (i + 1) % 5 != 0)
+      return (0);
 		if (tetr[i] == '#')
 			count++;
 		i++;
@@ -71,14 +71,17 @@ int				check_all_tetr(char *tetr, int size)
 	int i;
 
 	i = 0;
-	while (i <= size)
+	while (i < size)
 	{
-		if (check_tetr(tetr + 1) != 4)
+		if (check_tetr(tetr + i) != 4)
 			return (0);
-		if (check_con(tetr + 1) != 6 && check_con(tetr + 1) != 8)
+		if (check_con(tetr + i) != 6 && check_con(tetr + i) != 8)
 			return (0);
-		if ((*(tetr + 20) != '\n') && (*(tetr + 20) != '#' || *(tetr + 20) != '.'))
-			return (0);
+    if (*(tetr +i + 20))
+    {
+	  	if ((*(tetr + i + 20) != '\n') && (*(tetr + i + 21) != '#' || *(tetr + i + 21) != '.'))
+			  return (0);
+    }
 		i += 21;
 	}
 	return (1);

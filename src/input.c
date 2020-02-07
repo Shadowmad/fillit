@@ -3,32 +3,32 @@
 int       read_file(char *fname, char *input_buffer)
 {
   int fd;
-  int ret;
   int index;
-  char input1[600];
 
   fd = open(fname, O_RDONLY, 0);
+  index = 0;
   if (fd == -1)
-  {
     return (-1);
-  }
-  ret = read(fd, input1, 1);
-  printf("%s\n", input1);
-  return (ret);
+  while ((read(fd, input_buffer + index, 1)))
+    index++;
+  if (index > 545)
+    return (-1);
+  return (index);
 }
 
 int     main(int argc, char **argv)
 {
   char *file_input;
-  int fd;
+  int ret;
 
   file_input = (char *) malloc(sizeof(char) * 545);
-  fd = read_file(argv[0], file_input);
-  if (argc != 2 || fd == -1)
+  ret = read_file(argv[1], file_input);
+  if (argc != 2 || ret == -1)
   {
     write(1, "usage: ./fillit source_file\n", 28);
     return (-1);
   }
-  printf("%d\n", fd);
-  printf("%s", file_input);
+  printf("program read %d characters\n\n", ret);
+  printf("%s\nChecking Validation\n", file_input);
+  printf("\n\nValidation status: %d\n", check_all_tetr(file_input, ret));
 }
