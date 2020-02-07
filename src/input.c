@@ -31,4 +31,6 @@ int     main(int argc, char **argv)
   printf("program read %d characters\n\n", ret);
   printf("%s\nChecking Validation\n", file_input);
   printf("\n\nValidation status: %d\n", check_all_tetr(file_input, ret));
+  printf("# of tetr counted: %d\n", count_tetr(file_input));
+  generate_tetr_list(file_input);
 }

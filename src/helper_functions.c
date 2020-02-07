@@ -1,5 +1,3 @@
-#include <unistd.h>
-
 void		print_tetr(char **tetr)
 {
 	int row_index;
@@ -15,6 +13,7 @@ void		print_tetr(char **tetr)
 			write(1, &tetr[row_index][col_index], 1);
 			col_index++;
 		}
+    write(1, "\n", 1);
 		row_index++;
 	}
 }
