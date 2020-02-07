@@ -37,5 +37,6 @@ int     main(int argc, char **argv)
   else
   {
     write(1, "error", 5);
+    return (-1);
   }
 }
