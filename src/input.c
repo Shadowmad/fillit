@@ -29,7 +29,7 @@ int     main(int argc, char **argv)
     write(1, "usage: ./fillit source_file\n", 28);
     return (-1);
   }
-  ret = check_all_tetr(tetr, ret);
+  ret = check_all_tetr(file_input, ret);
   if (ret)
   {
     list = generate_tetr_list(file_input);
