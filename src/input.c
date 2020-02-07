@@ -28,9 +28,5 @@ int     main(int argc, char **argv)
     write(1, "usage: ./fillit source_file\n", 28);
     return (-1);
   }
-  printf("program read %d characters\n\n", ret);
-  printf("%s\nChecking Validation\n", file_input);
-  printf("\n\nValidation status: %d\n", check_all_tetr(file_input, ret));
-  printf("# of tetr counted: %d\n", count_tetr(file_input));
   generate_tetr_list(file_input);
 }

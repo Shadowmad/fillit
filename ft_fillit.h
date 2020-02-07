@@ -15,5 +15,8 @@ int         count_tetr(char *input);
 char        ***generate_tetr_list(char *input);
 void        convert_tetr(char **tetr, char c);
 void        shift_tetr(char **tetr);
+int         count_tetr(char *input);
+void        fill_tetr_list(char ***list, char *input, int num);
+char        ***generate_tetr_list(char *input);
 void        print_tetr(char **tetr);
 #endif

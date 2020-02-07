@@ -127,9 +127,5 @@ char    ***generate_tetr_list(char *input)
     shift_tetr(list[index]);
     index++;
   }
-  print_tetr(list[0]);
-  print_tetr(list[1]);
-  print_tetr(list[2]);
-  print_tetr(list[3]);
   return (list);
 }
