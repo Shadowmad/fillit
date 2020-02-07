@@ -1,3 +1,5 @@
+#include "ft_fillit.h"
+
 void		print_tetr(char **tetr)
 {
 	int row_index;
