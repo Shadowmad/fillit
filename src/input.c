@@ -18,8 +18,9 @@ int       read_file(char *fname, char *input_buffer)
 
 int     main(int argc, char **argv)
 {
-  char *file_input;
-  int ret;
+  char  *file_input;
+  int   ret;
+  char  ***list;
 
   file_input = (char *) malloc(sizeof(char) * 545);
   ret = read_file(argv[1], file_input);
@@ -28,5 +29,13 @@ int     main(int argc, char **argv)
     write(1, "usage: ./fillit source_file\n", 28);
     return (-1);
   }
-  generate_tetr_list(file_input);
+  ret = check_all_tetr(tetr, ret);
+  if (ret)
+  {
+    list = generate_tetr_list(file_input);
+  }
+  else
+  {
+    write(1, "error", 5);
+  }
 }
